@@ -9,6 +9,6 @@ branches:
   only:
   - master
 before_install:
-- pip install --user awscli
+- pip install --upgrade awscli
 - export PATH=$PATH:$HOME/.local/bin
 script: make build
