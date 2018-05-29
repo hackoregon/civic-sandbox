@@ -11,4 +11,4 @@ branches:
 before_install:
 - pip install --upgrade awscli
 - export PATH=$PATH:$HOME/.local/bin
-script: make build
+script: ./upload.sh
