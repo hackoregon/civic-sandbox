@@ -1,7 +1,7 @@
 import json
 def lambda_handler(event, context):
     body = {
-    'AWS lambda' : 'UPDATED'} 
+    'AWS lambda' : 'UPDATED 2:03pm'} 
     return {
       'statusCode': 200, 
       'body': json.dumps(body)
