@@ -3,7 +3,7 @@ python:
 - '3.6'
 env:
   global:
-  - AWS_DEFAULT_REGION=us-east-2
+  - AWS_DEFAULT_REGION=us-west-2
 branches:
   only:
   - master
