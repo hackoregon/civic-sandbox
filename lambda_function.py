@@ -8,7 +8,7 @@ def lambda_handler(event, context):
           'slides' : ['102', '106'],
           'default_slide' : '106'
           },
-        'housing': {
+        'affordable housing': {
           'foundations' : ['105', '104'],
           'default_foundation' : '105',
           'slides' : ['101', '102'],
