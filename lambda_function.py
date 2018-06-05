@@ -76,7 +76,7 @@ def lambda_handler(event, context):
           'name': 'zip codes',
           'endpoint': 'https://ctyhsin0r2.execute-api.us-east-2.amazonaws.com/mockfoundation103',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'visualization': 'heat map',
+          'visualization': 'choropleth',
           'attributes': {
             'primary': {
               'field': 'happy_index',
@@ -92,7 +92,7 @@ def lambda_handler(event, context):
           'name': 'neighborhoods',
           'endpoint': 'https://rnc45keyjk.execute-api.us-east-2.amazonaws.com/mockfoundation104',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'visualization': 'heat map',
+          'visualization': 'choropleth',
           'attributes': {
             'primary': {
               'field': 'name',
@@ -108,7 +108,7 @@ def lambda_handler(event, context):
           'name': 'voter precincts',
           'endpoint': 'https://qfvf1wpc3l.execute-api.us-east-2.amazonaws.com/mockfoundation105',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'visualization': 'heat map',
+          'visualization': 'choropleth',
           'attributes': {
             'primary': {
               'field': 'avg_voter_turnout_pct',
