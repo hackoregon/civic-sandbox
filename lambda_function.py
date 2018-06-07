@@ -80,7 +80,6 @@ def lambda_handler(event, context):
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/taxlotblockgroups/',
           'description': 'Property Value: This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
-          }
         },
         '103': {
           'name': 'zip codes',
@@ -130,7 +129,8 @@ def lambda_handler(event, context):
             },
           }
         }, 
-    }
+    },
+ }
     return {
       'statusCode': 200, 
       'body': body
