@@ -6,21 +6,21 @@ def lambda_handler(event, context):
           'description': 'Transportation: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'foundations' : ['103', '105', '104'],
           'default_foundation' : '103',
-          'slides' : ['102', '106'],
+          'slides' : ['102', '106', '001', '002'],
           'default_slide' : '106'
           },
         'affordable housing': {
           'description': 'Transportation: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'foundations' : ['105', '104'],
+          'foundations' : ['105', '104', '006'],
           'default_foundation' : '105',
-          'slides' : ['101', '102'],
+          'slides' : ['101', '102', '003', '004'],
           'default_slide' : '101'
           },
         'neighborhoods': {
           'description': 'Transportation: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'foundations' : ['104'],
-          'default_foundation' : '104',
-          'slides' : ['101', '102', '106'],
+          'foundations' : ['104', '006'],
+          'default_foundation' : '006',
+          'slides' : ['101', '102', '106', '005'],
           'default_slide' : '102'
           }
     },
@@ -75,7 +75,7 @@ def lambda_handler(event, context):
         }   
     }, 
     'foundations': {
-        '001': {
+        '006': {
           'name': 'Property Value',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/taxlotblockgroups/',
           'description': 'Property Value: This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
