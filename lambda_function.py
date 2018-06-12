@@ -11,9 +11,9 @@ def lambda_handler(event, context):
           },
         'Food Access': {
           'description': 'View of grocery locations, community gardens, and transit stops per neighborhood.',
-          'foundations' : ['007'],
-          'default_foundation' : '007',
-          'slides' : ['009', '010', '005'],
+          'foundations' : ['015'],
+          'default_foundation' : '015',
+          'slides' : ['009', '010', '005', '014'],
           'default_slide' : '010'
           },
         'Sweeps': {
@@ -21,6 +21,13 @@ def lambda_handler(event, context):
           'foundations' : ['007'],
           'default_foundation' : '007',
           'slides' : ['012', '013', '011', '003', '004'],
+          'default_slide' : ['012', '013']
+          },
+        'Bikes': {
+          'description': 'View of daily bike estimates bike counts, bike routes, greenways, and multiuse trails per neighborhood',
+          'foundations' : ['007'],
+          'default_foundation' : '007',
+          'slides' : ['001', '002', '008',],
           'default_slide' : ['012', '013']
           },
     },
@@ -91,6 +98,12 @@ def lambda_handler(event, context):
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'ScatterPlotMap',
         },
+        '014': {
+          'name': 'bus stops',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/busstops/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'ScatterPlotMap',
+        },
     }, 
     'foundations': {
         '006': {
@@ -102,6 +115,12 @@ def lambda_handler(event, context):
         '007': {
           'name': 'Total Population',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/population/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '015': {
+          'name': 'Total Population',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/under18/',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
         },
