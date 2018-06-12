@@ -30,6 +30,20 @@ def lambda_handler(event, context):
           'slides' : ['001', '002', '008',],
           'default_slide' : ['012', '013']
           },
+        'Disaster Resilience': {
+          'description': 'description. description. description.',
+          'foundations' : ['007'],
+          'default_foundation' : '007',
+          'slides' : ['016'],
+          'default_slide' : ['016']
+          },
+        'Placeholder': {
+          'description': 'for slides and foundations not yet in defined packages',
+          'foundations' : ['006'],
+          'default_foundation' : '007',
+          'slides' : ['016',  '017'],
+          'default_slide' : ['016']
+          },
     },
     'slides': {
         '001': {
@@ -104,6 +118,18 @@ def lambda_handler(event, context):
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'ScatterPlotMap',
         },
+        '016': {
+          'name': 'points of interest',
+          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/slides/poi/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'IconMap',
+        },
+        '017': {
+          'name': 'Building Permits',
+          'endpoint':'http://service.civicpdx.org/housing-affordability/sandbox/slides/permits/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'ScreenGridMap',
+        },
     }, 
     'foundations': {
         '006': {
@@ -119,7 +145,7 @@ def lambda_handler(event, context):
           'visualization': 'ChoroplethMap',
         },
         '015': {
-          'name': 'Total Population',
+          'name': 'Housholds with Children',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/under18/',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
