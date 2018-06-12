@@ -10,14 +10,14 @@ def lambda_handler(event, context):
           'default_slide' : '106'
           },
         'affordable housing': {
-          'description': 'Transportation: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'description': 'Housing: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'foundations' : ['105', '104', '006'],
           'default_foundation' : '105',
           'slides' : ['101', '102', '003', '004'],
           'default_slide' : '101'
           },
         'neighborhoods': {
-          'description': 'Transportation: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'description': 'Neighborhoods: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'foundations' : ['104', '006'],
           'default_foundation' : '006',
           'slides' : ['101', '102', '106', '005'],
