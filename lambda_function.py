@@ -30,6 +30,13 @@ def lambda_handler(event, context):
           'slides' : ['003', '004', '005'],
           'default_slide' : ['003', '004']
           },
+        'Food Access': {
+          'description': 'View of grocery locations, community gardens, and transit stops per neighborhood.',
+          'foundations' : ['007'],
+          'default_foundation' : '007',
+          'slides' : ['009', '010', '005'],
+          'default_slide' : '010'
+          },
     },
     'slides': {
         '001': {
@@ -67,6 +74,18 @@ def lambda_handler(event, context):
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/bikegreenways/',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'PathMap',
+        }, 
+        '009': {
+          'name': 'rail stops',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/railstops/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'ScatterPlotMap',
+        }, 
+        '010': {
+          'name': 'grocery stores',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/retailgrocers/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'ScatterPlotMap',
         }, 
         '101': {
           'name': 'sweeps',
