@@ -2,27 +2,6 @@ import json
 def lambda_handler(event, context):
     body = {
     'packages' : { 
-        'transportation': {
-          'description': 'Transportation: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'foundations' : ['103', '105', '104'],
-          'default_foundation' : '103',
-          'slides' : ['102', '106', '001', '002'],
-          'default_slide' : '106'
-          },
-        'affordable housing': {
-          'description': 'Housing: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'foundations' : ['105', '104', '006'],
-          'default_foundation' : '105',
-          'slides' : ['101', '102', '003', '004'],
-          'default_slide' : '101'
-          },
-        'neighborhoods': {
-          'description': 'Neighborhoods: This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'foundations' : ['104', '006'],
-          'default_foundation' : '006',
-          'slides' : ['101', '102', '106', '005'],
-          'default_slide' : '102'
-          },
         'Greenspace': {
           'description': 'View of trees, parks, gardens, trails, and greenways per neighborhood.',
           'foundations' : ['007'],
@@ -36,6 +15,13 @@ def lambda_handler(event, context):
           'default_foundation' : '007',
           'slides' : ['009', '010', '005'],
           'default_slide' : '010'
+          },
+        'Sweeps': {
+          'description': 'View of reports of camps, camp sweeps, and household data per neighborhood.',
+          'foundations' : ['007'],
+          'default_foundation' : '007',
+          'slides' : ['012', '013', '011', '003', '004'],
+          'default_slide' : ['012', '013']
           },
     },
     'slides': {
@@ -86,25 +72,25 @@ def lambda_handler(event, context):
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/retailgrocers/',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'ScatterPlotMap',
-        }, 
-        '101': {
-          'name': 'sweeps',
-          'endpoint': 'https://0uv7y2d29i.execute-api.us-east-2.amazonaws.com/mockslide101/',
-          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+        },
+        '011': {
+          'name': 'demolitions',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/retailgrocers/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'ScatterPlotMap',
+        },
+        '012': {
+          'name': 'camp sweeps',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/campsweeps/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'ScreenGridMap',
         },
-        '102': {
-          'name': 'bus stops',
-          'endpoint': 'https://hsqxipv6u8.execute-api.us-east-2.amazonaws.com/mockslide102/',
-          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+        '013': {
+          'name': 'camp reports',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/campreports/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'ScatterPlotMap',
-        }, 
-        '106': {
-          'name': 'bike lanes',
-          'endpoint': 'https://cekaghbj2k.execute-api.us-east-2.amazonaws.com/mockslide106',
-          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'visualization': 'PathMap',
-        }   
+        },
     }, 
     'foundations': {
         '006': {
@@ -119,54 +105,6 @@ def lambda_handler(event, context):
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
         },
-        '103': {
-          'name': 'zip codes',
-          'endpoint': 'https://ctyhsin0r2.execute-api.us-east-2.amazonaws.com/mockfoundation103',
-          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'visualization': 'ChoroplethMap',
-          'attributes': {
-            'primary': {
-              'field': 'happy_index',
-              'name': 'average happy index rating'
-            },
-            'secondary': {
-              'field': 'parks',
-              'name': 'number of parks'
-            },
-          }
-        },
-        '104': {
-          'name': 'neighborhoods',
-          'endpoint': 'https://rnc45keyjk.execute-api.us-east-2.amazonaws.com/mockfoundation104',
-          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'visualization': 'ChoroplethMap',
-          'attributes': {
-            'primary': {
-              'field': 'name',
-              'name': 'neighborhood name'
-            },
-            'secondary': {
-              'field': None,
-              'name': None
-            },
-          }
-        },
-        '105': {
-          'name': 'voter precincts',
-          'endpoint': 'https://qfvf1wpc3l.execute-api.us-east-2.amazonaws.com/mockfoundation105',
-          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
-          'visualization': 'ChoroplethMap',
-          'attributes': {
-            'primary': {
-              'field': 'avg_voter_turnout_pct',
-              'name': 'average voter turnout' 
-            },
-            'secondary': {
-              'field': 'median_income',
-              'name': 'median income'
-            },
-          }
-        }, 
     },
  }
     return {
