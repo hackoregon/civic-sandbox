@@ -22,7 +22,14 @@ def lambda_handler(event, context):
           'default_foundation' : '006',
           'slides' : ['101', '102', '106', '005'],
           'default_slide' : '102'
-          }
+          },
+        'Greenspace': {
+          'description': 'View of trees, parks, gardens, trails, and greenways per neighborhood.',
+          'foundations' : ['007'],
+          'default_foundation' : '007',
+          'slides' : ['003', '004', '005'],
+          'default_slide' : ['003', '004']
+          },
     },
     'slides': {
         '001': {
@@ -55,6 +62,12 @@ def lambda_handler(event, context):
           'description': 'Community Gardens: This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'SmallPolygonMap',
         },    
+        '008': {
+          'name': 'bike greenways',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/bikegreenways/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'PathMap',
+        }, 
         '101': {
           'name': 'sweeps',
           'endpoint': 'https://0uv7y2d29i.execute-api.us-east-2.amazonaws.com/mockslide101/',
@@ -79,6 +92,12 @@ def lambda_handler(event, context):
           'name': 'Property Value',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/taxlotblockgroups/',
           'description': 'Property Value: This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '007': {
+          'name': 'Total Population',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/population/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
         },
         '103': {
