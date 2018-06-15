@@ -11,14 +11,14 @@ def lambda_handler(event, context):
           },
         'Food Access': {
           'description': 'View of grocery locations, community gardens, and transit stops per neighborhood.',
-          'foundations' : ['015'],
-          'default_foundation' : '015',
+          'foundations' : ['028'],
+          'default_foundation' : '028',
           'slides' : ['009', '010', '005', '014'],
           'default_slide' : '010'
           },
         'Sweeps': {
           'description': 'View of reports of camps, camp sweeps, and household data per neighborhood.',
-          'foundations' : ['007'],
+          'foundations' : ['007', '024', '025', '026','027'],
           'default_foundation' : '007',
           'slides' : ['012', '013', '011', '003', '004'],
           'default_slide' : ['012', '013']
@@ -43,6 +43,13 @@ def lambda_handler(event, context):
           'default_foundation' : '007',
           'slides' : ['016',  '017'],
           'default_slide' : ['016']
+          },
+        'Evictions': {
+          'description': 'Eviction, rent, income, and property values by census blockgroup.',
+          'foundations' : ['018', '019', '020', '021', '022'],
+          'default_foundation' : '018',
+          'slides' : ['014',  '009', '011'],
+          'default_slide' : ['011']
           },
     },
     'slides': {
@@ -147,6 +154,66 @@ def lambda_handler(event, context):
         '015': {
           'name': 'Housholds with Children',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/under18/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '018': {
+          'name': 'Median Houshold Income',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/income/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '019': {
+          'name': 'Median Gross Rent',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/grossrent/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '020': {
+          'name': 'Evictions',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/evictions/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '021': {
+          'name': 'Renter Occupied Households',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/renteroccupied/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '022': {
+          'name': 'Rent Burden',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/rentburden/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '024': {
+          'name': 'Households with Children',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/under18/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '025': {
+          'name': 'Households with Seniors',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/over65/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '026': {
+          'name': 'Housholders Living Alone',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/livingalone/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '027': {
+          'name': 'Owner Occupied Housholds',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/owneroccupied/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+         },
+        '028': {
+          'name': 'Percent Renter Occupied',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/pctrenteroccupied/',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
         },
