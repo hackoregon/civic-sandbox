@@ -137,6 +137,18 @@ def lambda_handler(event, context):
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'ScreenGridMap',
         },
+        '031': {
+          'name': 'Safety Hotline',
+          'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/safetyhotline/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'ScatterPlotMap',
+        },
+        '032': {
+          'name': 'Crashes',
+          'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/crashes/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'ScatterPlotMap',
+        },
     }, 
     'foundations': {
         '006': {
