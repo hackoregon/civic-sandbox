@@ -217,6 +217,24 @@ def lambda_handler(event, context):
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
         },
+        '029': {
+          'name': 'Shaking Intensity',
+          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/shaking/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '030': {
+          'name': 'Wet Season Mean Deformation Intensity',
+          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/liquefaction/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '031': {
+          'name': 'Dry Season Mean Deformation Intensity',
+          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/landslide/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
     },
  }
     return {
