@@ -53,10 +53,10 @@ def lambda_handler(event, context):
           },
         'Transportation': {
           'description': 'Transporation Package',
-          'foundations' : ['000'],
-          'default_foundation' : '000',
-          'slides' : ['031', '032' ],
-          'default_slide' : ['031', '032']
+          'foundations' : ['042'],
+          'default_foundation' : '042',
+          'slides' : ['031', '032', '015'],
+          'default_slide' : ['031', '032', '015',]
           },
     },
     'slides': {
@@ -119,6 +119,11 @@ def lambda_handler(event, context):
           'name': 'bus stops',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/busstops/',
           'visualization': 'ScatterPlotMap',
+        },
+        '015': {
+          'name': 'Change in Ridership by Route',
+          'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/routechange/',
+          'visualization': 'PathMap',
         },
         '016': {
           'name': 'points of interest',
@@ -269,7 +274,11 @@ def lambda_handler(event, context):
         '041': {
           'name': 'Voters 50 plus',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/voters50plus/',
-
+          'visualization': 'ChoroplethMap',
+        },
+        '042': {
+          'name': 'Change in Ridership by Census Block',
+          'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/foundations/blockchange/',
           'visualization': 'ChoroplethMap',
         },
     },
