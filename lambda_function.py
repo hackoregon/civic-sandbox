@@ -51,6 +51,13 @@ def lambda_handler(event, context):
           'slides' : ['014',  '009', '011'],
           'default_slide' : ['011']
           },
+        'Voters': {
+          'description': 'Voters by age.',
+          'foundations' : ['037', '038', '038', '040', '041'],
+          'default_foundation' : '037',
+          'slides' : ['009',  '004', '008', '002'],
+          'default_slide' : []
+          },
     },
     'slides': {
         '001': {
@@ -262,6 +269,36 @@ def lambda_handler(event, context):
         '034': {
           'name': 'Census Reponse Rate',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/censusresponse/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '037': {
+          'name': 'Voters 18 to 25',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters18to25/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '038': {
+          'name': 'Voters 26 to 32',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters26to32/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '039': {
+          'name': 'Voters 33 to 39',
+          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/voters33to39/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '040': {
+          'name': 'Voters 40 to 49',
+          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/voters40to49/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '041': {
+          'name': 'Voters 50 plus',
+          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/voters50plus/',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
         },
