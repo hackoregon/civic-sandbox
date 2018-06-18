@@ -27,13 +27,13 @@ def lambda_handler(event, context):
           'description': 'View of daily bike estimates bike counts, bike routes, greenways, and multiuse trails per neighborhood',
           'foundations' : ['007'],
           'default_foundation' : '007',
-          'slides' : ['001', '002', '008',],
+          'slides' : ['001', '002', '008', '035', '036'],
           'default_slide' : ['012', '013']
           },
         'Disaster Resilience': {
           'description': 'description. description. description.',
-          'foundations' : ['007'],
-          'default_foundation' : '007',
+          'foundations' : ['029', '030', '033', '034'],
+          'default_foundation' : '029',
           'slides' : ['016'],
           'default_slide' : ['016']
           },
@@ -103,7 +103,7 @@ def lambda_handler(event, context):
         },
         '011': {
           'name': 'demolitions',
-          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/retailgrocers/',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/demolitions/',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'ScatterPlotMap',
         },
@@ -146,6 +146,18 @@ def lambda_handler(event, context):
         '032': {
           'name': 'Crashes',
           'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/crashes/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'ScatterPlotMap',
+        },
+        '035': {
+          'name': 'Bike Counts',
+          'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/bikecounts/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
+          'visualization': 'ScatterPlotMap',
+        },
+        '036': {
+          'name': 'Bike Estimates',
+          'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/bikeestimates/',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description.',
           'visualization': 'ScatterPlotMap',
         },
@@ -241,9 +253,15 @@ def lambda_handler(event, context):
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
         },
-        '031': {
+        '033': {
           'name': 'Dry Season Mean Deformation Intensity',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/landslide/',
+          'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
+          'visualization': 'ChoroplethMap',
+        },
+        '034': {
+          'name': 'Census Reponse Rate',
+          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/censusresponse/',
           'description': 'This is a fake description. This is a fake description. This is a fake description. This is a fake description. ',
           'visualization': 'ChoroplethMap',
         },
