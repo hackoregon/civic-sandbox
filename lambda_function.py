@@ -11,8 +11,8 @@ def lambda_handler(event, context):
           },
         'Food Access': {
           'description': 'View of grocery locations, community gardens, and transit stops per neighborhood.',
-          'foundations' : ['028'],
-          'default_foundation' : '028',
+          'foundations' : ['028', '044'],
+          'default_foundation' : '044',
           'slides' : ['009', '010', '005', '014'],
           'default_slide' : '010'
           },
@@ -39,8 +39,8 @@ def lambda_handler(event, context):
           },
         'Evictions': {
           'description': 'Eviction, rent, income, and property values by census blockgroup.',
-          'foundations' : ['018', '019', '020', '021', '022'],
-          'default_foundation' : '018',
+          'foundations' : ['018', '019', '020', '021', '022', '043'],
+          'default_foundation' : '043',
           'slides' : ['014',  '009', '011', '017'],
           'default_slide' : ['011']
           },
@@ -160,25 +160,21 @@ def lambda_handler(event, context):
         '007': {
           'name': 'Total Population',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/population/',
-
           'visualization': 'ChoroplethMap',
         },
         '018': {
           'name': 'Median Houshold Income',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/income/',
-
           'visualization': 'ChoroplethMap',
         },
         '019': {
           'name': 'Median Gross Rent',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/grossrent/',
-
           'visualization': 'ChoroplethMap',
         },
         '020': {
           'name': 'Evictions',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/evictions/',
-
           'visualization': 'ChoroplethMap',
         },
         '021': {
@@ -190,85 +186,71 @@ def lambda_handler(event, context):
         '022': {
           'name': 'Rent Burden',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/rentburden/',
-
           'visualization': 'ChoroplethMap',
         },
         '024': {
           'name': 'Households with Children',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/under18/',
-
           'visualization': 'ChoroplethMap',
         },
         '025': {
           'name': 'Households with Seniors',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/over65/',
-
           'visualization': 'ChoroplethMap',
         },
         '026': {
           'name': 'Housholders Living Alone',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/livingalone/',
-
           'visualization': 'ChoroplethMap',
         },
         '027': {
           'name': 'Owner Occupied Housholds',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/owneroccupied/',
-
           'visualization': 'ChoroplethMap',
          },
         '028': {
           'name': 'Percent Renter Occupied',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/pctrenteroccupied/',
-
           'visualization': 'ChoroplethMap',
         },
         '029': {
           'name': 'Shaking Intensity',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/shaking/',
-
           'visualization': 'ChoroplethMap',
         },
         '030': {
           'name': 'Wet Season Mean Deformation Intensity',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/liquefaction/',
-
           'visualization': 'ChoroplethMap',
         },
         '033': {
           'name': 'Dry Season Mean Deformation Intensity',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/landslide/',
-
           'visualization': 'ChoroplethMap',
         },
         '034': {
           'name': 'Census Reponse Rate',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/censusresponse/',
-
           'visualization': 'ChoroplethMap',
         },
         '037': {
           'name': 'Voters 18 to 25',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters18to25/',
-
           'visualization': 'ChoroplethMap',
         },
         '038': {
           'name': 'Voters 26 to 32',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters26to32/',
-
           'visualization': 'ChoroplethMap',
         },
         '039': {
           'name': 'Voters 33 to 39',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/voters33to39/',
-
           'visualization': 'ChoroplethMap',
         },
         '040': {
           'name': 'Voters 40 to 49',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/voters40to49/',
-
           'visualization': 'ChoroplethMap',
         },
         '041': {
@@ -279,6 +261,16 @@ def lambda_handler(event, context):
         '042': {
           'name': 'Change in Ridership by Census Block',
           'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/foundations/blockchange/',
+          'visualization': 'ChoroplethMap',
+        },
+        '043': {
+          'name': 'Eviction Rate',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/evictionrate/',
+          'visualization': 'ChoroplethMap',
+        },
+        '044': {
+          'name': 'Poverty Rate',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/povertyrate/',
           'visualization': 'ChoroplethMap',
         },
     },
