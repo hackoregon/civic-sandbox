@@ -147,12 +147,12 @@ def lambda_handler(event, context):
         },
         '035': {
           'name': 'Bike Counts',
-          'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/bikecounts/',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/bikecounts/',
           'visualization': 'ScatterPlotMap',
         },
         '036': {
           'name': 'Bike Estimates',
-          'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/bikeestimates/',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/bikeestimates/',
           'visualization': 'ScatterPlotMap',
         },
     }, 
@@ -180,7 +180,6 @@ def lambda_handler(event, context):
         '021': {
           'name': 'Renter Occupied Households',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/renteroccupied/',
-
           'visualization': 'ChoroplethMap',
         },
         '022': {
@@ -245,17 +244,17 @@ def lambda_handler(event, context):
         },
         '039': {
           'name': 'Voters 33 to 39',
-          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/voters33to39/',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters33to39/',
           'visualization': 'ChoroplethMap',
         },
         '040': {
           'name': 'Voters 40 to 49',
-          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/voters40to49/',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters40to49/',
           'visualization': 'ChoroplethMap',
         },
         '041': {
           'name': 'Voters 50 plus',
-          'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/voters50plus/',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters50plus/',
           'visualization': 'ChoroplethMap',
         },
         '042': {
