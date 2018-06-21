@@ -5,8 +5,8 @@ def lambda_handler(event, context):
         'Greenspace': {
           'description': '',
           #'View of trees, parks, gardens, trails, and greenways per neighborhood.',
-          'foundations' : ['007'],
-          'default_foundation' : '007',
+          'foundations' : ['024','007'],
+          'default_foundation' : '024',
           'slides' : ['003', '004', '005'],
           'default_slide' : ['003', '004']
           },
@@ -29,7 +29,7 @@ def lambda_handler(event, context):
         'Bikes': {
           'description': '',
           #'View of daily bike estimates bike counts, bike routes, greenways, and multiuse trails per neighborhood',
-          'foundations' : ['007', '045'],
+          'foundations' : ['007'],
           'default_foundation' : '007',
           'slides' : ['001', '002', '008', '035', '036'],
           'default_slide' : ['001', '002']
