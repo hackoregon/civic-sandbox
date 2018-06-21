@@ -32,7 +32,7 @@ def lambda_handler(event, context):
           'foundations' : ['007', '045'],
           'default_foundation' : '007',
           'slides' : ['001', '002', '008', '035', '036'],
-          'default_slide' : ['001', '002']
+          'default_slide' : ['001', '002', '035', '036']
           },
         'Disaster Resilience': {
           'description': '',
@@ -69,62 +69,62 @@ def lambda_handler(event, context):
     },
     'slides': {
         '001': {
-          'name': 'bike parking',
+          'name': 'Bike Parking',
           'endpoint': 'http://service.civicpdx.org/neighborhood-development/sandbox/slides/bikeparking/',
           'visualization': 'ScatterPlotMap',
         },
         '002': {
-          'name': 'bike lanes',
+          'name': 'Bike Lane',
           'endpoint': 'http://service.civicpdx.org/neighborhood-development/sandbox/slides/bikelanes/',
           'visualization': 'PathMap',
         }, 
         '003': {
-          'name': 'parks',
+          'name': 'Parks',
           'endpoint': 'http://service.civicpdx.org/neighborhood-development/sandbox/slides/parks/',
           'visualization': 'PolygonPlotMap',
         },
         '004': {
-          'name': 'multi-use trails',
+          'name': 'Multi-Use Trails',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/multiusetrails/',
           'visualization': 'PathMap',
         },    
         '005': {
-          'name': 'community gardens',
+          'name': 'Community Gardens',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/communitygardens/',
           'visualization': 'SmallPolygonMap',
         },    
         '008': {
-          'name': 'bike greenways',
+          'name': 'Bike Greenways',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/bikegreenways/',
           'visualization': 'PathMap',
         }, 
         '009': {
-          'name': 'rail stops',
+          'name': 'Rail Stops',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/railstops/',
           'visualization': 'ScatterPlotMap',
         }, 
         '010': {
-          'name': 'grocery stores',
+          'name': 'Grocery Stores',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/retailgrocers/',
           'visualization': 'ScatterPlotMap',
         },
         '011': {
-          'name': 'demolitions',
+          'name': 'Demolitions',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/demolitions/',
           'visualization': 'ScatterPlotMap',
         },
         '012': {
-          'name': 'camp sweeps',
+          'name': 'Camp Sweeps',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/campsweeps/',
           'visualization': 'ScatterPlotMap',
         },
         '013': {
-          'name': 'camp reports',
+          'name': 'Camp Reports',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/campreports/',
           'visualization': 'ScatterPlotMap',
         },
         '014': {
-          'name': 'bus stops',
+          'name': 'Bus Stops',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/busstops/',
           'visualization': 'ScatterPlotMap',
         },
@@ -134,7 +134,7 @@ def lambda_handler(event, context):
           'visualization': 'PathMap',
         },
         '016': {
-          'name': 'points of interest',
+          'name': 'Points of Interest',
           'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/slides/poi/',
           'visualization': 'IconMap',
         },
