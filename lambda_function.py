@@ -46,7 +46,7 @@ def lambda_handler(event, context):
           'description': '',
           #'Eviction, rent, income, and property values by census blockgroup.',
           'foundations' : ['018', '019', '020', '021', '022', '043'],
-          'default_foundation' : '043',
+          'default_foundation' : '020',
           'slides' : ['014',  '009', '011', '017'],
           'default_slide' : ['011']
           },
