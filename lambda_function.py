@@ -3,56 +3,64 @@ def lambda_handler(event, context):
     body = {
     'packages' : { 
         'Greenspace': {
-          'description': 'View of trees, parks, gardens, trails, and greenways per neighborhood.',
+          'description': '',
+          #'View of trees, parks, gardens, trails, and greenways per neighborhood.',
           'foundations' : ['007'],
           'default_foundation' : '007',
           'slides' : ['003', '004', '005'],
           'default_slide' : ['003', '004']
           },
         'Food Access': {
-          'description': 'View of grocery locations, community gardens, and transit stops per neighborhood.',
+          'description': '',
+          #'View of grocery locations, community gardens, and transit stops per neighborhood.',
           'foundations' : ['028', '044'],
           'default_foundation' : '044',
           'slides' : ['009', '010', '005', '014'],
           'default_slide' : '010'
           },
         'Sweeps': {
-          'description': 'View of reports of camps, camp sweeps, and household data per neighborhood.',
+          'description': '',
+          #'View of reports of camps, camp sweeps, and household data per neighborhood.',
           'foundations' : ['007', '024', '025', '026','027'],
           'default_foundation' : '007',
           'slides' : ['012', '013', '011', '003', '004'],
           'default_slide' : ['012',]
           },
         'Bikes': {
-          'description': 'View of daily bike estimates bike counts, bike routes, greenways, and multiuse trails per neighborhood',
+          'description': '',
+          #'View of daily bike estimates bike counts, bike routes, greenways, and multiuse trails per neighborhood',
           'foundations' : ['007', '045'],
           'default_foundation' : '007',
           'slides' : ['001', '002', '008', '035', '036'],
           'default_slide' : ['001', '002']
           },
         'Disaster Resilience': {
-          'description': 'description. description. description.',
+          'description': '',
+          #'description. description. description.',
           'foundations' : ['029', '030', '033', '034'],
           'default_foundation' : '029',
           'slides' : ['016'],
           'default_slide' : ['016']
           },
         'Evictions': {
-          'description': 'Eviction, rent, income, and property values by census blockgroup.',
+          'description': '',
+          #'Eviction, rent, income, and property values by census blockgroup.',
           'foundations' : ['018', '019', '020', '021', '022', '043'],
           'default_foundation' : '043',
           'slides' : ['014',  '009', '011', '017'],
           'default_slide' : ['011']
           },
         'Voters': {
-          'description': 'Voters by age.',
+          'description': '',
+          #'Voters by age.',
           'foundations' : ['037', '038', '039', '040', '041'],
           'default_foundation' : '037',
           'slides' : ['009',  '004', '008', '002'],
           'default_slide' : []
           },
         'Transportation': {
-          'description': 'Transporation Package',
+          'description': '',
+          #'Transporation Package',
           'foundations' : ['042'],
           'default_foundation' : '042',
           'slides' : ['031', '032', '015'],
