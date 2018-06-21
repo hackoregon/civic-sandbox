@@ -274,7 +274,7 @@ def lambda_handler(event, context):
         },
         '045': {
           'name': 'Camp Reports',
-          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/reportsbymonth/,
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/reportsbymonth/',
           'visualization': 'ChoroplethMap',
         },
     },
