@@ -21,8 +21,8 @@ def lambda_handler(event, context):
         'Sweeps': {
           'description': '',
           #'View of reports of camps, camp sweeps, and household data per neighborhood.',
-          'foundations' : ['007', '024', '025', '026','027'],
-          'default_foundation' : '007',
+          'foundations' : ['045', '007', '024', '025', '026','027'],
+          'default_foundation' : '045',
           'slides' : ['012', '013', '011', '003', '004'],
           'default_slide' : ['012',]
           },
@@ -116,7 +116,7 @@ def lambda_handler(event, context):
         '012': {
           'name': 'camp sweeps',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/campsweeps/',
-          'visualization': 'ScreenGridMap',
+          'visualization': 'ScatterPlotMap',
         },
         '013': {
           'name': 'camp reports',
