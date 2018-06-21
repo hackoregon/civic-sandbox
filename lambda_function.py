@@ -21,11 +21,11 @@ def lambda_handler(event, context):
           'foundations' : ['007', '024', '025', '026','027'],
           'default_foundation' : '007',
           'slides' : ['012', '013', '011', '003', '004'],
-          'default_slide' : ['012', '013']
+          'default_slide' : ['012',]
           },
         'Bikes': {
           'description': 'View of daily bike estimates bike counts, bike routes, greenways, and multiuse trails per neighborhood',
-          'foundations' : ['007'],
+          'foundations' : ['007', '045'],
           'default_foundation' : '007',
           'slides' : ['001', '002', '008', '035', '036'],
           'default_slide' : ['001', '002']
@@ -270,6 +270,11 @@ def lambda_handler(event, context):
         '044': {
           'name': 'Poverty Rate',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/povertyrate/',
+          'visualization': 'ChoroplethMap',
+        },
+        '045': {
+          'name': 'Camp Reports',
+          'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/reportsbymonth/,
           'visualization': 'ChoroplethMap',
         },
     },
