@@ -171,7 +171,7 @@ def lambda_handler(event, context):
           'visualization': 'ChoroplethMap',
         },
         '018': {
-          'name': 'Median Household Income',
+          'name': 'Median Houshold Income',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/income/',
           'visualization': 'ChoroplethMap',
         },
