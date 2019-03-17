@@ -206,12 +206,12 @@ def lambda_handler(event, context):
           'visualization': 'ChoroplethMap',
         },
         '026': {
-          'name': 'Householders Living Alone',
+          'name': 'Housholders Living Alone',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/livingalone/',
           'visualization': 'ChoroplethMap',
         },
         '027': {
-          'name': 'Owner Occupied Households',
+          'name': 'Owner Occupied Housholds',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/owneroccupied/',
           'visualization': 'ChoroplethMap',
          },
