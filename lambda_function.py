@@ -171,7 +171,7 @@ def lambda_handler(event, context):
           'visualization': 'ChoroplethMap',
         },
         '018': {
-          'name': 'Median Houshold Income',
+          'name': 'Median Household Income',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/income/',
           'visualization': 'ChoroplethMap',
         },
@@ -206,12 +206,12 @@ def lambda_handler(event, context):
           'visualization': 'ChoroplethMap',
         },
         '026': {
-          'name': 'Housholders Living Alone',
+          'name': 'Householders Living Alone',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/livingalone/',
           'visualization': 'ChoroplethMap',
         },
         '027': {
-          'name': 'Owner Occupied Housholds',
+          'name': 'Owner Occupied Households',
           'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/owneroccupied/',
           'visualization': 'ChoroplethMap',
          },
