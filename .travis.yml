@@ -11,3 +11,7 @@ before_install:
 - pip install --upgrade awscli
 - export PATH=$PATH:$HOME/.local/bin
 script: ./upload.sh
+notifications:
+  slack:
+    rooms:
+      - civicsoftware:NWEsYkoW7oJjtQ65WZNgL5Rr#buildnotifications
