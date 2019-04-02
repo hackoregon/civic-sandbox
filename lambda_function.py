@@ -1,4 +1,12 @@
-import json
+from urllib import request
+import json 
+
+package_info_url_suffix = 'sandbox/package_info/'
+
+package_info_contexts = { 
+  #'disaster-resilience' : 'http://0.0.0.0:8000/disaster-resilience'
+  'disaster-resilience' : 'https://service.civicpdx.org/disaster-resilience'
+}
 
 packages = { 
   'Greenspace': {
@@ -33,14 +41,14 @@ packages = {
     'slides' : ['001', '002', '008', '035', '036'],
     'default_slide' : ['001', '002']
     },
-  'Disaster Resilience': {
-    'description': '',
-    #'description. description. description.',
-    'foundations' : ['029', '030', '033', '034'],
-    'default_foundation' : '029',
-    'slides' : ['016'],
-    'default_slide' : ['016']
-    },
+  # 'Disaster Resilience': {
+  #   'description': '',
+  #   #'description. description. description.',
+  #   'foundations' : ['029', '030', '033', '034'],
+  #   'default_foundation' : '029',
+  #   'slides' : ['016'],
+  #   'default_slide' : ['016']
+  #   },
   'Evictions': {
     'description': '',
     #'Eviction, rent, income, and property values by census blockgroup.',
@@ -133,11 +141,11 @@ slides = {
     'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/routechange/',
     'visualization': 'PathMap',
   },
-  '016': {
-    'name': 'points of interest',
-    'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/slides/poi/',
-    'visualization': 'IconMap',
-  },
+  # '016': {
+  #   'name': 'points of interest',
+  #   'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/slides/poi/',
+  #   'visualization': 'IconMap',
+  # },
   '017': {
     'name': 'Building Permits',
     'endpoint':'http://service.civicpdx.org/housing-affordability/sandbox/slides/permits/',
@@ -221,26 +229,26 @@ foundations = {
     'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/pctrenteroccupied/',
     'visualization': 'ChoroplethMap',
   },
-  '029': {
-    'name': 'Shaking Intensity',
-    'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/shaking/',
-    'visualization': 'ChoroplethMap',
-  },
-  '030': {
-    'name': 'Wet Season Mean Deformation Intensity',
-    'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/liquefaction/',
-    'visualization': 'ChoroplethMap',
-  },
-  '033': {
-    'name': 'Dry Season Mean Deformation Intensity',
-    'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/landslide/',
-    'visualization': 'ChoroplethMap',
-  },
-  '034': {
-    'name': 'Census Reponse Rate',
-    'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/censusresponse/',
-    'visualization': 'ChoroplethMap',
-  },
+  # '029': {
+  #   'name': 'Shaking Intensity',
+  #   'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/shaking/',
+  #   'visualization': 'ChoroplethMap',
+  # },
+  # '030': {
+  #   'name': 'Wet Season Mean Deformation Intensity',
+  #   'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/liquefaction/',
+  #   'visualization': 'ChoroplethMap',
+  # },
+  # '033': {
+  #   'name': 'Dry Season Mean Deformation Intensity',
+  #   'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/landslide/',
+  #   'visualization': 'ChoroplethMap',
+  # },
+  # '034': {
+  #   'name': 'Census Reponse Rate',
+  #   'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/censusresponse/',
+  #   'visualization': 'ChoroplethMap',
+  # },
   '037': {
     'name': 'Voters 18 to 25',
     'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters18to25/',
@@ -288,7 +296,25 @@ foundations = {
   },
 }
 
+def update_packages():
+  for k,v in package_info_contexts.items():
+    full_package_info_url = v + '/' + package_info_url_suffix
+
+    with request.urlopen(full_package_info_url) as url:
+      package_info_json = url.read().decode()
+      package_info_dict = json.loads(package_info_json)
+      
+      new_packages = package_info_dict['packages']      
+      new_foundations = package_info_dict['foundations']
+      new_slides = package_info_dict['slides']
+
+      packages.update(new_packages)
+      foundations.update(new_foundations)
+      slides.update(new_slides)
+
 def lambda_handler(event, context):
+  update_packages()
+
   body = {
     'packages' : packages,
     'slides': slides, 
