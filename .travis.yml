@@ -7,10 +7,10 @@ env:
 branches:
   only:
   - master
-before_install:
+install:
 - pip install --upgrade awscli
 - export PATH=$PATH:$HOME/.local/bin
-script: ./upload.sh
+script: ./bin/tesh.sh && ./bin/upload.sh
 notifications:
   slack:
     rooms:
