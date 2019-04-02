@@ -361,6 +361,3 @@ def test_packages_elements_have_correct_structure():
         assert 'default_foundation' in v
         assert 'default_slide' in v
         assert 'slides' in v
-
-if __name__ == "__main__":
-    test_returned_dictionary_value()
