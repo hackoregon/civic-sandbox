@@ -1,13 +1,25 @@
-from urllib import request
-import json 
+from urllib import request, parse
+import json
 
-package_info_url_suffix = 'sandbox/package_info/'
 
-package_info_contexts = { 
-  #'disaster-resilience' : 'http://0.0.0.0:8000/disaster-resilience'
-  'disaster-resilience' : 'https://service.civicpdx.org/disaster-resilience'
+# base url for each backend context
+package_info_contexts = {
+  #'disaster-resilience' :  'http://0.0.0.0:8000/disaster-resilience'
+  'disaster-resilience' :   'https://service.civicpdx.org/disaster-resilience/'
 }
 
+# endpoint suffix for package info definitions at each backend repo
+package_info_endpoint_url_suffix = 'sandbox/package_info/'
+
+"""
+ Package Definitions:  
+  Old "un-decentralized" style of locating all package definitions, for all packages for all backend repos
+  in one monolithic dictionary inside the civic-sandbox's lambda_function endpoint. This has been replaced
+  by the new decentralized style of locating package defitions for each backend repo in the respective 
+  backend repo's 'sandbox/package_info/' endpoint. While the lamda_function's location is still at the 
+  same place, it now fetches each backend repo's package definitions from the backend repo's 
+  'sandbox/package_info/' endpoint in a transparent manner.    
+"""
 packages = { 
   'Greenspace': {
     'description': '',
@@ -41,6 +53,8 @@ packages = {
     'slides' : ['001', '002', '008', '035', '036'],
     'default_slide' : ['001', '002']
     },
+  # Disaster-resilience packages relocated to backend repo's 'sandbox/package_info/' endpoint to support
+  # decentralized package definitions
   # 'Disaster Resilience': {
   #   'description': '',
   #   #'description. description. description.',
@@ -75,6 +89,11 @@ packages = {
     },
   }
 
+
+"""
+ Slides:
+ Used in formulating the package definitions
+"""
 slides = {
   '001': {
     'name': 'bike parking',
@@ -141,6 +160,8 @@ slides = {
     'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/routechange/',
     'visualization': 'PathMap',
   },
+  # Disaster-resilience slides relocated to backend repo's 'sandbox/package_info/' endpoint to support
+  # decentralized package definitions
   # '016': {
   #   'name': 'points of interest',
   #   'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/slides/poi/',
@@ -173,6 +194,10 @@ slides = {
   },
 }
 
+"""
+ Foundations:
+ Used in formulating the package definitions
+"""
 foundations = {
   '007': {
     'name': 'Total Population',
@@ -229,6 +254,8 @@ foundations = {
     'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/pctrenteroccupied/',
     'visualization': 'ChoroplethMap',
   },
+  # Disaster-resilience foundations relocated to backend repo's 'sandbox/package_info/' endpoint to support
+  # decentralized package definitions
   # '029': {
   #   'name': 'Shaking Intensity',
   #   'endpoint':'http://service.civicpdx.org/disaster-resilience/sandbox/foundations/shaking/',
@@ -296,24 +323,33 @@ foundations = {
   },
 }
 
-def update_packages():
-  for k,v in package_info_contexts.items():
-    full_package_info_url = v + '/' + package_info_url_suffix
 
-    with request.urlopen(full_package_info_url) as url:
-      package_info_json = url.read().decode()
-      package_info_dict = json.loads(package_info_json)
-      
-      new_packages = package_info_dict['packages']      
-      new_foundations = package_info_dict['foundations']
-      new_slides = package_info_dict['slides']
+"""
+ For each backend context defined in package_info_contexts, call the civic-sandbox/get_packages
+ endpoint to fetch any package definitions located at that context, and update the local 
+ copy with those package definitions.
+"""
+def update_packages_infos():  
+  for remote_context_url_base in package_info_contexts.values():
+    # formulate the url of the remote context's package definitions endpoint
+    package_info_endpoint = parse.urljoin(remote_context_url_base, package_info_endpoint_url_suffix)
 
-      packages.update(new_packages)
-      foundations.update(new_foundations)
-      slides.update(new_slides)
+    with request.urlopen(package_info_endpoint) as endpoint_url:
+      # fetch any packages defined at the remote context
+      package_info = json.loads(endpoint_url.read().decode())
+      # add any remotely-defined packages to the local copy
+      packages.update(package_info['packages'])
+      foundations.update(package_info['foundations'])
+      slides.update(package_info['slides'])
 
+
+"""
+ The hander function used when the lambda url is invoked. Returns the package definitions
+ dictionary in JSON format.
+"""
 def lambda_handler(event, context):
-  update_packages()
+  # update the local package definitions with any fetched from the remote contexts
+  update_packages_infos()
 
   body = {
     'packages' : packages,
@@ -325,3 +361,6 @@ def lambda_handler(event, context):
     'statusCode': 200, 
     'body': body
   }
+
+if __name__ == "__main__":
+  lambda_handler(None, None)
