@@ -5,7 +5,7 @@ import package_info as local_package_info
 
 remote_package_info_contexts = {
   #'disaster-resilience' :  'http://0.0.0.0:8000/disaster-resilience'
-  'disaster-resilience' :   'http://service.civicpdx.org/disaster-resilience/'
+  'disaster-resilience' :   'https://service.civicpdx.org/disaster-resilience/'
 }
 
 remote_package_info_endpoint_suffix = 'sandbox/package_info/'
