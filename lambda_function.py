@@ -1,6 +1,6 @@
 from urllib import request, parse
 import json
-from packages import packages, slides, foundations
+import package_info as local_package_info_file
 
 
 # base url for each backend context
@@ -17,18 +17,18 @@ package_info_endpoint_url_suffix = 'sandbox/package_info/'
  endpoint to fetch any package definitions located at that context, and update the local 
  copy with those package definitions.
 """
-def update_packages_infos():  
+def update_local_packge_info_file():  
   for remote_context_url_base in package_info_contexts.values():
     # formulate the url of the remote context's package definitions endpoint
     package_info_endpoint = parse.urljoin(remote_context_url_base, package_info_endpoint_url_suffix)
 
     with request.urlopen(package_info_endpoint) as endpoint_url:
       # fetch any packages defined at the remote context
-      package_info = json.loads(endpoint_url.read().decode())
+      remote_package_info = json.loads(endpoint_url.read().decode())
       # add any remotely-defined packages to the local copy
-      packages.update(package_info['packages'])
-      foundations.update(package_info['foundations'])
-      slides.update(package_info['slides'])
+      local_package_info_file.packages.update(remote_package_info['packages'])
+      local_package_info_file.foundations.update(remote_package_info['foundations'])
+      local_package_info_file.slides.update(remote_package_info['slides'])
 
 
 """
@@ -37,12 +37,12 @@ def update_packages_infos():
 """
 def lambda_handler(event, context):
   # update the local package definitions with any fetched from the remote contexts
-  update_packages_infos()
+  update_local_packge_info_file()
 
   body = {
-    'packages' : packages,
-    'slides': slides, 
-    'foundations': foundations,
+    'packages' : local_package_info_file.packages,
+    'slides': local_package_info_file.slides, 
+    'foundations': local_package_info_file.foundations,
   }
 
   return {
