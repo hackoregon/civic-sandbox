@@ -59,14 +59,6 @@ packages = {
     'slides' : ['009',  '004', '008', '002'],
     'default_slide' : []
     },
-  'Transportation': {
-    'description': '',
-    #'Transporation Package',
-    'foundations' : ['042'],
-    'default_foundation' : '042',
-    'slides' : ['031', '032', '015'],
-    'default_slide' : ['031', '032', '015',]
-    },
   }
 
 
@@ -135,25 +127,10 @@ slides = {
     'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/busstops/',
     'visualization': 'ScatterPlotMap',
   },
-  '015': {
-    'name': 'Change in Ridership by Route',
-    'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/routechange/',
-    'visualization': 'PathMap',
-  },
   '017': {
     'name': 'Building Permits',
     'endpoint':'http://service.civicpdx.org/housing-affordability/sandbox/slides/permits/',
     'visualization': 'ScreenGridMap',
-  },
-  '031': {
-    'name': 'Safety Hotline',
-    'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/safetyhotline/',
-    'visualization': 'ScatterPlotMap',
-  },
-  '032': {
-    'name': 'Crashes',
-    'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/slides/crashes/',
-    'visualization': 'ScatterPlotMap',
   },
   '035': {
     'name': 'Bike Counts',
@@ -250,11 +227,6 @@ foundations = {
   '041': {
     'name': 'Voters 50 plus',
     'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters50plus/',
-    'visualization': 'ChoroplethMap',
-  },
-  '042': {
-    'name': 'Change in Ridership by Census Block',
-    'endpoint':'http://service.civicpdx.org/transportation-systems/sandbox/foundations/blockchange/',
     'visualization': 'ChoroplethMap',
   },
   '043': {
