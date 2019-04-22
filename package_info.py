@@ -43,14 +43,6 @@ packages = {
     'slides' : ['001', '002', '008', '035', '036'],
     'default_slide' : ['001', '002']
     },
-  'Evictions': {
-    'description': '',
-    #'Eviction, rent, income, and property values by census blockgroup.',
-    'foundations' : ['018', '019', '020', '021', '022', '043'],
-    'default_foundation' : '020',
-    'slides' : ['014',  '009', '011', '017'],
-    'default_slide' : ['011']
-    },
   'Voters': {
     'description': '',
     #'Voters by age.',
@@ -127,11 +119,6 @@ slides = {
     'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/busstops/',
     'visualization': 'ScatterPlotMap',
   },
-  '017': {
-    'name': 'Building Permits',
-    'endpoint':'http://service.civicpdx.org/housing-affordability/sandbox/slides/permits/',
-    'visualization': 'ScreenGridMap',
-  },
   '035': {
     'name': 'Bike Counts',
     'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/slides/bikecounts/',
@@ -152,31 +139,6 @@ foundations = {
   '007': {
     'name': 'Total Population',
     'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/population/',
-    'visualization': 'ChoroplethMap',
-  },
-  '018': {
-    'name': 'Median Household Income',
-    'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/income/',
-    'visualization': 'ChoroplethMap',
-  },
-  '019': {
-    'name': 'Median Gross Rent',
-    'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/grossrent/',
-    'visualization': 'ChoroplethMap',
-  },
-  '020': {
-    'name': 'Evictions',
-    'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/evictions/',
-    'visualization': 'ChoroplethMap',
-  },
-  '021': {
-    'name': 'Renter Occupied Households',
-    'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/renteroccupied/',
-    'visualization': 'ChoroplethMap',
-  },
-  '022': {
-    'name': 'Rent Burden',
-    'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/rentburden/',
     'visualization': 'ChoroplethMap',
   },
   '024': {
@@ -227,11 +189,6 @@ foundations = {
   '041': {
     'name': 'Voters 50 plus',
     'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/voters50plus/',
-    'visualization': 'ChoroplethMap',
-  },
-  '043': {
-    'name': 'Eviction Rate',
-    'endpoint':'http://service.civicpdx.org/neighborhood-development/sandbox/foundations/evictionrate/',
     'visualization': 'ChoroplethMap',
   },
   '044': {

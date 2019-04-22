@@ -5,10 +5,14 @@ import traceback
 
 
 remote_package_info_contexts = {
-  #'transportation-systems' :  'http://0.0.0.0:8000/transportation-systems/',
-  'transportation-systems' : 'https://service.civicpdx.org/transportation-systems/',
-  #'disaster-resilience' :    'http://0.0.0.0:8000/disaster-resilience/',
-  'disaster-resilience' :     'https://service.civicpdx.org/disaster-resilience/',
+  #'transportation-systems' :   'http://0.0.0.0:8000/transportation-systems/',
+  'transportation-systems' :    'https://service.civicpdx.org/transportation-systems/',
+  #'disaster-resilience' :      'http://0.0.0.0:8000/disaster-resilience/',
+  'disaster-resilience' :       'https://service.civicpdx.org/disaster-resilience/',
+  #'neighborhood-development' :  'http://0.0.0.0:8000/neighborhood-development/',
+  #'neighborhood-development' : 'https://service.civicpdx.org/neighborhood-development/',
+  #'housing-affordability' :     'http://0.0.0.0:8000/housing-affordability/',
+  'housing-affordability' :    'https://service.civicpdx.org/housing-affordability/',
 }
 
 remote_package_info_endpoint_suffix = 'sandbox/package_info/'
