@@ -10,8 +10,7 @@ branches:
 install:
 - pip install -r requirements.txt
 - export PATH=$PATH:$HOME/.local/bin
-script: ./bin/test.sh && ./bin/upload.sh
+script: "./bin/test.sh && ./bin/upload.sh"
 notifications:
   slack:
-    rooms:
-      - civicsoftware:NWEsYkoW7oJjtQ65WZNgL5Rr#buildnotifications
+    secure: vF+siKy9JXGEGMbKu8xw2tSuJoSMrN9qX+68ZzOgzE0ixSXLs4K4tGejwZ5YSM4/c9o70QRxt05Sq1g9vVXW5V0VM8wbv9Lq+vVt48aydmVn3JsjbOZbXj2SUrXdnjfrdF+90yYW9Cxjlc0lrNOsUKifyu9/qx/hijiRZeXIGl9FJG5MBF7Q/bW7dC6Kb7P2w6kzivUoglhJ4Fxg42GeTE+Iv3TD1CmyHPiQK8DWFjEBRZ6U5JF77sQNBf+Xnx1+L3z59FR6eeAeL9f2WO/i8uLbFDQTPEg/xbxyMefa/X77NsBgGe7v6rhDsQ0HIY5zBglq54yngDSEg2L40nuSV09a0KTOCCBvKhmpiWIGH0asTztC5bHCkB+e7ENYZO/yVLZNdA5ZAPaQv3xesLYbZ5yjPVZC4RdK8IDeAdR3zi6T9Vfgx77aSu17pUWdFbL2LeiLA/L2R1ZE5+5DOdESCdRGEKqfC3RybvLMBGWuKcg7ggGIl4NhxquXpPvkNnS3f7DJXbt3rYbRIcWs5dGxTkVi3hUblh+lCOj3fn3ifwQwwQpbwPKFbRFefPfT9Ki7TFn2y1jao+ZrwbvqgZlZ1DeCE/zKdwEzCL3Mxw04q0tTI76B4SQoWY242W4CzF7j9em7xm1cHHjYU+s6EaTcRSJ2h2wUNyVPWuVQuzhD1rU=
